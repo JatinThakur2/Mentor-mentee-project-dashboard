@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mentee DashBoard</title>
+    <link rel="stylesheet" href="css/menteedash.css" />
+    <script src="js/table2excel.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <main>
+      <section class="sidebar">
+        <img src="img/Image 4.png" alt="" />
+        <p class="para">Mentee Name</p>
+        <p class="para">Semester</p>
+        <button><a href="Mentee-form.html">Update Profile</a></button>
+        <div>
+          <img class="course-img" src="img/Repeat Grid 1.png" alt="" />
+        <p class="course"><a href="Menteedash.html">All Courses</a></p>
+        </div>
+        <p class="mentor"><a href="#">Mentor Detail</a></p>
+        <p class="mentor"><a href="issue.html">Issue</a></p>
+        <div>
+          <img class="course-img1" src="img/download.png" alt="" />
+          <p class="course1"><a href="mentee.html">logout</a></p>
+        </div>
+      </section>
+      <section class="search">
+        <input type="text" placeholder="search" />
+        <button class="sear">Subject</button>
+      </section>
+
+      <section class="main-section">
+        <p class="all">All Courses</a></p>
+        <div>
+          <p>
+            <span><a href="#">Progress Report </a> </span> | <a href="Mentee-form.html">Personal Details</a>
+          </p>
+        </div>
+        <div class="table1">
+          <br />
+          <table id = "exportdata">
+            <tr>
+              <th>Course Name</th>
+              <th>Grade</th>
+            </tr>
+            <tr>
+              <th><a href="menteedash1.html">ABC</a></th>
+              <th>25%</th>
+            </tr>
+            <tr>
+              <th><a href="menteedash1.html">ABC</a></th>
+              <th>98%</th>
+            </tr>
+            <tr>
+              <th><a href="menteedash1.html">ABC</a></th> 
+              <th>78%</th>
+            </tr>
+            <tr>
+              <th><a href="menteedash1.html">ABC</a></th>
+              <th>96%</th>
+            </tr>
+          </table>
+        </div>
+        <script type="text/javascript">
+          function ExportToExcel(tableID, filename = ''){
+              var downloadurl;
+              var dataFileType = 'application/vnd.ms-excel';
+              var tableSelect = document.getElementById(tableID);
+              var tableHTMLData = tableSelect.outerHTML.replace(/ /g, '%20');
+              
+              // Specify file name
+              filename = filename?filename+'.xls':'export_excel_data.xls';
+              
+              // Create download link element
+              downloadurl = document.createElement("a");
+              
+              document.body.appendChild(downloadurl);
+              
+              if(navigator.msSaveOrOpenBlob){
+                  var blob = new Blob(['\ufeff', tableHTMLData], {
+                      type: dataFileType
+                  });
+                  navigator.msSaveOrOpenBlob( blob, filename);
+              }else{
+                  // Create a link to the file
+                  downloadurl.href = 'data:' + dataFileType + ', ' + tableHTMLData;
+              
+                  // Setting the file name
+                  downloadurl.download = filename;
+                  
+                  //triggering the function
+                  downloadurl.click();
+              }
+          }
+           
+          </script>
+        <button class="sear1" onclick="ExportToExcel('exportdata')"><b>Export</b></button>
+      </section>
+    </main>
+  </body>
+</html>

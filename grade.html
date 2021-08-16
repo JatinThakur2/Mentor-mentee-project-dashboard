@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/sprint2.css">
+  <script type="text/javascript" src="js/js.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body bgcolor="040B33">
+
+  <div class="navbar">
+    <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776; </span>
+</div>
+<div id="main">
+  <br>
+  <img class="photo" src="img/1.png" height="80px" width="80px">
+  <h2 style="margin-left: 150px; margin-top: -80px;">Dashboard</h2>
+  <h6 style="margin-top: -20px; margin-left: 150px;">Mentor Detail</h6>
+  <br/>
+  <div id="table1">
+    <br>
+    <a href="grade.html">
+      <h5 class="box" style="margin-top: -10px; margin-left: 10px; width: 125px; ">Overview Report</h5></a>
+      <a href="deliverable.html">
+      <h5 class="box" style="margin-top: -62px; margin-left: 180px; width: 125px;">Deliverable Report</h5></a>
+      <table id = "exportdata">
+          <tr>
+            <th>Course Name</th>
+            <th>Grade</th>
+            
+          </tr>
+          <tr>
+            <td><a href="deliverable.html">ABC</a></td>
+            <td>#1</td>
+          </tr>
+          <tr>
+            <td><a href="deliverable.html">ABX</a></td>
+            <td>#2</td>
+          </tr>
+          <tr>
+            <td><a href="deliverable.html">AXC</a></td>
+            <td>#3</td>
+          </tr>
+          <tr>
+            <td><a href="deliverable.html">AZC</a></td>
+            <td>#4</td>
+          </tr>
+         
+        </table>
+        <br>
+        
+        
+  </div>
+</div>
+
+   <div id="mySidenav" class="sidenav">
+    <a href="percentage_Schand.html">Dashboard</a>
+    <a href="">Mentees</a>
+    <a href="mentorissue1.html">Issues</a>
+    <a href="Guide1.html">Guidelines</a>
+    <a href="mentor.html">Logout</a>
+  </div>
+  <script type="text/javascript">
+    function ExportToExcel(tableID, filename = ''){
+        var downloadurl;
+        var dataFileType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTMLData = tableSelect.outerHTML.replace(/ /g, '%20');
+        
+        // Specify file name
+        filename = filename?filename+'.xls':'export_excel_data.xls';
+        
+        // Create download link element
+        downloadurl = document.createElement("a");
+        
+        document.body.appendChild(downloadurl);
+        
+        if(navigator.msSaveOrOpenBlob){
+            var blob = new Blob(['\ufeff', tableHTMLData], {
+                type: dataFileType
+            });
+            navigator.msSaveOrOpenBlob( blob, filename);
+        }else{
+            // Create a link to the file
+            downloadurl.href = 'data:' + dataFileType + ', ' + tableHTMLData;
+        
+            // Setting the file name
+            downloadurl.download = filename;
+            
+            //triggering the function
+            downloadurl.click();
+        }
+    }
+     
+    </script>
+  <button class="sear" onclick="ExportToExcel('exportdata')"><b>Export</b></button>
+</body>
+</html> 

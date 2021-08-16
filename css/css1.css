@@ -1,0 +1,159 @@
+.navbar {
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: white;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+  
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    left: 0;
+    background-color: rgb(28, 66, 178);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+    color: #f1f1f1;
+  }
+  
+  #table1{
+    background-color: #f1f1f1;
+    color:blue;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  #table2{
+    background-color: #f1f1f1;
+    color:blue;
+    
+    
+    border-radius: 20px;
+  }
+  .box{
+  border:1px solid blue;
+  border-radius:10px;
+  color:blue;
+  width: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .photo{
+    margin-left: 40px;
+    margin-top: 40px;
+    border-radius: 10%
+  }
+  .button {
+    background-color: #4caf50; 
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    margin: 4px 2px;
+    border: 2px solid #4caf50;
+    
+  }
+  .button1:hover {
+    background-color: #4caf50;
+    color: white;
+  }
+  #section1 {
+    display: initial;
+    }
+    
+    #section2 {
+    display: none;
+    }
+    
+    #section3 {
+    display: none;
+    }
+    
+    #section4 {
+    display: none;
+    }

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="#" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      text-align: left;
+    }
+
+    .icon {
+      border-radius: 20% !important;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #174a84;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      font-weight: 700;
+      border-left: 6px solid lightblue;
+      background-color: #040B33;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 15px;
+      margin-top: 45px;
+      // margin-left: 150px;
+
+    }
+
+    .col-md-12 {
+      position: relative;
+      width: 80%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-bottom: 380px;
+
+    }
+
+    .table {
+      width: 100%;
+      margin-bottom: 2rem;
+      background-color: rgba(0, 0, 0, 0);
+      text-align: center;
+    }
+
+    .table td,
+    .table th {
+      padding: 0.95rem;
+      vertical-align: top;
+      horizontal-align: center;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .table thead th {
+      vertical-align: bottom;
+      horizontal-align: center;
+      border-bottom: 2px solid #e9ecef;
+      font-size: 20px;
+    }
+
+    .table-borderless td,
+    .table-borderless th,
+    .table-borderless thead th {
+      border: 0;
+      color: #000;
+      font-size: 20px;
+      font-color: #0000ff;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .table-responsive {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .details {
+      border-width: 3px;
+      border-style: outset;
+      //box-shadow: 5px 10px #888888;
+      border-radius: 25px;
+      padding: 50px;
+      color: black;
+      margin: 10px;
+      font-weight: bold;
+      width: 770px;
+      height: 250px;
+      font: 20px/30px cursive;
+    }
+
+    .interndetails {
+      width: 190px;
+      border-width: 3px;
+      border-style: outset;
+      //box-shadow: 5px 10px #888888;
+      border-radius: 10px;
+      padding: 5px;
+      color: #0000ff;
+      margin: 3px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .button {
+      background-color: white;
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #e7e7e7;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      color: #495057;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+      background-color: transparent;
+      border: 1px solid transparent;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 0.25rem;
+      transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+        box-shadow 0.15s;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(26, 54, 126, 0.125);
+      border-radius: 0.25rem;
+    }
+
+    .card-header {
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 0;
+      color: inherit;
+      background-color: #fff;
+      border-bottom: 1px solid rgba(26, 54, 126, 0.125);
+      border-radius: 25px;
+    }
+
+    .card-header:first-child {
+      border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+
+    body .card.mb-3 {
+      margin-bottom: 15px !important;
+      border-radius: 15px;
+
+    }
+
+    body .card-header {
+      height: auto;
+      display: block;
+      padding: 0.75rem 1.5rem;
+      text-align: center;
+    }
+
+    body .card-header .btn-actions-pane-right {
+      padding: 0.75rem 0 0;
+    }
+    }
+
+    .card.mb-3 {
+      margin-bottom: 30px !important;
+      border-radius: 10px;
+    }
+
+    #navbar {
+      transition: margin-left .5s;
+      padding: 5px;
+      overflow: hidden;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    #main {
+      transition: margin-left 0.5s;
+      padding: 8px;
+      margin-top: 10px;
+      align-items: center;
+      color: #f1f1f1;
+      margin-left: 300px;
+
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #navbar a:hover {
+      background: #ddd;
+      color: white;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      overflow: hidden;
+      background-color: #040B33;
+    }
+
+    li {
+      margin-left: 50px;
+      float: right;
+      padding: 20px;
+      font-size: 36px;
+    }
+  </style>
+</head>
+
+<body bgcolor="040B33">
+  <ul>
+    <li class="sear"><a href="menteedetails.html" style="color:white">Back</a></li>
+  </ul>
+  <div id="mySidenav" class="sidenav">
+    <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="percentage_Schand.html">Dashboard</a>
+    <a href="mendetailscomplete.html">Mentees</a>
+    <a href="mentorissue1.html">Issues</a>
+    <a href="Guide1.html">Guidelines</a>
+    <a href="resultmentee.html">Results</a>
+    <a href="mentor.html"> Logout</a>
+  </div>
+
+  <div id="navbar">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+
+  <div id="main">
+    <br>
+    <img class="icon" src="img/1.png" width="80" height="80">
+    <h2 style="margin-left: 120px; margin-top: -80px;">Dashboard</h2>
+    <h5 style="margin-top: -20px; margin-left: 120px;">Mentee Details</h5>
+    <br>
+    <div id="table1">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-card mb-3 card">
+            <div class="card-header" style="border-radius: 10px">
+              <div class="interndetails">
+                Mentee Details
+
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                <thread>
+                  <tr>
+                    <th class="text-center" style="color:#0000ff">Intern ID</th>
+                    <th class="text-center" style="color:#0000ff">Name</th>
+                    <th class="text-center" style="color:#0000ff">Email ID</th>
+                    <th class="text-center" style="color:#0000ff">Contact Number </th>
+                    <th class="text-center" style="color:#0000ff">Parents Details </th>
+                    <th class="text-center" style="color:#0000ff">Result</th>
+
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+
+                      <td class="text-center" style="color:#0000ff">01</td>
+                      <td class="text-center" style="color:#0000ff">ABC</td>
+                      <td class="text-center" style="color:#0000ff">abc@gmail.com</td>
+                      <td class="text-center" style="color:#0000ff">123456789</td>
+                      <td class="text-center" style="color:#0000ff"> <a href="parentdetails.html"> click here</a></td>
+                      <td class="text-center" style="color:#0000ff"> <a href="resultmentee.html"> click here</a></td>
+
+
+
+                    </tr>
+                    <tr>
+
+                      <td class="text-center" style="color:#0000ff">02</td>
+                      <td class="text-center" style="color:#0000ff">ABC</td>
+                      <td class="text-center" style="color:#0000ff">abc@gmail.com</td>
+                      <td class="text-center" style="color:#0000ff">123456789</td>
+                      <td class="text-center" style="color:#0000ff"> <a href="parentdetails.html"> click here</a></td>
+                      <td class="text-center" style="color:#0000ff"> <a href="resultmentee.html"> click here</a></td>
+                    </tr>
+                    <tr>
+
+                      <td class="text-center" style="color:#0000ff">03</td>
+                      <td class="text-center" style="color:#0000ff">ABC</td>
+                      <td class="text-center" style="color:#0000ff">abc@gmail.com</td>
+                      <td class="text-center" style="color:#0000ff">123456789</td>
+                      <td class="text-center" style="color:#0000ff"> <a href="parentdetails.html"> click here</a></td>
+                      <td class="text-center" style="color:#0000ff"> <a href="resultmentee.html"> click here</a></td>>
+                    </tr>
+                    <tr>
+
+                      <td class="text-center" style="color:#0000ff">04</td>
+                      <td class="text-center" style="color:#0000ff">ABC</td>
+                      <td class="text-center" style="color:#0000ff">abc@gmail.com</td>
+                      <td class="text-center" style="color:#0000ff">123456789</td>
+                      <td class="text-center" style="color:#0000ff"> <a href="parentdetails.html"> click here</a></td>
+                      <td class="text-center" style="color:#0000ff"> <a href="resultmentee.html"> click here</a></td>
+                    </tr>
+
+
+                  </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    }
+  </script>
+
+</body>
+
+</html>

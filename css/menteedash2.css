@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #040b33;
+}
+
+main {
+  background: #fff;
+  margin: 30px;
+  padding: 50px;
+  border-radius: 20px;
+  height: 90vh;
+}
+
+section .sidebar {
+  margin-top: 50px;
+}
+
+.para {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.course-img {
+  margin-top: 40px;
+}
+
+.course {
+  display: inline;
+  margin-left: -5px;
+  color: blue;
+  font-size: 18px;
+}
+.course1 {
+  display: inline;
+  margin-left: 15px;
+  color: black;
+  font-size: 18px;
+}
+
+.mentor {
+  color: blue;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.course-img1 {
+  margin-top: 250px;
+  height: 20px;
+  width: 20px;
+  margin-right: -20px;
+}
+
+.search {
+  position: absolute;
+  top: 0;
+  grid-template-areas: 100px 100px;
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 100px;
+  margin-left: 300px;
+}
+
+input {
+  padding: 10px;
+  border: 0px solid #000;
+  border-radius: 20px;
+  width: 20rem;
+  text-align: left;
+  font-size: 18px;
+  box-shadow: 2px 3px 5px #888888;
+}
+
+.sear {
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #4346e1;
+  color: white;
+  border: 0px solid #4346e1;
+  margin-left: -35px;
+  font-size: 18px;
+  box-shadow: 2px 3px 5px #4346e1;
+}
+.main-section {
+  position: absolute;
+  top: 0;
+  grid-template-areas: 100px 100px;
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 100px;
+  margin-left: 300px;
+  margin-top: 170px;
+}
+
+.all {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+.issue-form {
+  border-radius: 25px;
+  box-shadow: 2px 5px 10px #888888;
+}
+
+.issue-form h3 {
+  font-size: 30px;
+  padding: 15px;
+  border-bottom: 1px solid #4346e1;
+  margin-bottom: 10px;
+}
+
+textarea {
+  padding: 15px;
+  border-radius: 25px;
+  margin-left: 15px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.mentor-button {
+  background: #4346e1;
+  margin-left: 15px;
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.subject {
+  border-radius: 0px;
+  font-size: 30px;
+  padding: 15px;
+  border-bottom: 1px solid #4346e1;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  box-shadow: none;
+  color: #4346e1;
+}
+
+input:focus {
+  outline: none;
+}

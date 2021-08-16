@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/css.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/js.js"></script>
+</head>
+
+<body bgcolor="040B33">
+  <div class="navbar">
+    <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776; </span>
+  </div>
+  <div id="main">
+    <br>
+    <img class="photo" src="img/1.png" width="80" height="80">
+    <h2 style="margin-left: 150px; margin-top: -80px;">Dashboard</h2>
+    <h6 style="margin-top: -20px; margin-left: 150px;">Admin Detail</h6>
+    <br>
+    <div id="table1">
+      <br>
+      <h5 class="box" 2>Assign</h5>
+
+      <form class="form">
+
+        <div class="form-group formtext">
+          <label>Inter ID:</label><br>
+          <input type="number" name="internid" class="form-control formtextbox" placeholder="1234" required="">
+        </div>
+        <br>
+
+        <div class="form-group formtext">
+          <label>Name:</label><br>
+          <input type="text" name="name" class="form-control formtextbox" placeholder="Name" required="">
+        </div>
+        <br>
+        <div class="form-group formtext">
+          <label>Email:</label><br>
+          <input type="text" name="email" class="form-control formtextbox" placeholder="abc@gmail.com"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="">
+        </div>
+        <br>
+        <div class="form-group formtext">
+          <label>Mentor:</label><br>
+          <input type="text" name="mname" class="form-control formtextbox" placeholder="Mentor" required="">
+        </div>
+        <br>
+        <button type="submit" class="button button1">Save</button>
+
+      </form>
+      <br>
+      <br>
+      <table id="tblCustomers" cellspacing="0" cellpadding="0" class="rcorners data-table">
+        <thead>
+          <th>Intern ID</th>
+          <th>Mentee Name</th>
+          <th>Email</th>
+          <th>Mentor</th>
+          <th>Action</th>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+      </table>
+      <input type="button" id="btnExport" class="button button5" value="Export" onclick="Export()" />
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="js/table2excel.js" type="text/javascript"></script>
+      <script src="js/js.js" type="text/javascript"></script>
+    </div>
+
+    <script type="text/javascript" src="js/form.js"></script>
+    <br>
+
+
+  </div>
+  </div>
+
+
+  <div id="mySidenav" class="sidenav">
+    <a href="admindashboard.html">Dashboard</a>
+    <a href="home.html">Home</a>
+    <a href="#">Mentee</a>
+    <a href="#">Mentor</a>
+    <a href="assign.html">Assign</a>
+    <a href="admin.html">Logout</a>
+  </div>
+</body>
+
+</html>

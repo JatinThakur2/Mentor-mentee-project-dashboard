@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/sprint2.css">
+  <script type="text/javascript" src="js/js.js"></script>
+</head>
+
+<body bgcolor="040B33">
+
+  <div class="navbar">
+    <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776; </span>
+  </div>
+  <div id="main">
+    <br>
+    <img class="photo" src="img/1.png" height="80px" width="80px">
+    <h2 style="margin-left: 150px; margin-top: -80px ;">Dashboard</h2>
+    <h6 style="margin-top: -20px; margin-left: 150px;">Mentor Detail</h6>
+    <br />
+    <div id="table1">
+      <br>
+      <h5 class="box" style="margin-top: -10px; margin-left: 10px;">Mentee Details</h5>
+      <table id = "exportdata">
+        <tr>
+          <th>Name</th>
+          <th>Intern Id</th>
+          <th>Email Id</th>
+          <th>Contact Number</th>
+          <th>Attendance</th>
+            <th> Perents Details</th>
+        </tr>
+        <tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+        <tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+        <tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+        <tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+<tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+<tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+<tr>
+          <td><a href="grade.html">ABC</a></td>
+          <td><a href="grade.html">1800**</a></td>
+          <td>abc@gmail.com</td>
+          <td>123456789</td>
+          <td class="box"><a href="AttendancePage.html">Click Here </a></td>
+            <td class="box"><a href="parentdetails.html">Click Here </a></td>
+        </tr>
+      </table>
+      
+      <br>
+
+
+    </div>
+    <script type="text/javascript">
+      function ExportToExcel(tableID, filename = ''){
+          var downloadurl;
+          var dataFileType = 'application/vnd.ms-excel';
+          var tableSelect = document.getElementById(tableID);
+          var tableHTMLData = tableSelect.outerHTML.replace(/ /g, '%20');
+          
+          // Specify file name
+          filename = filename?filename+'.xls':'export_excel_data.xls';
+          
+          // Create download link element
+          downloadurl = document.createElement("a");
+          
+          document.body.appendChild(downloadurl);
+          
+          if(navigator.msSaveOrOpenBlob){
+              var blob = new Blob(['\ufeff', tableHTMLData], {
+                  type: dataFileType
+              });
+              navigator.msSaveOrOpenBlob( blob, filename);
+          }else{
+              // Create a link to the file
+              downloadurl.href = 'data:' + dataFileType + ', ' + tableHTMLData;
+          
+              // Setting the file name
+              downloadurl.download = filename;
+              
+              //triggering the function
+              downloadurl.click();
+          }
+      }
+       
+      </script>
+      <br>
+    <button class="sear1" onclick="ExportToExcel('exportdata')"><b>Export</b></button>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="percentage_Schand.html">Dashboard</a>
+    <a href="mendetailscomplete.html">Mentees</a>
+    <a href="mentorissue1.html">Issues</a>
+    <a href="Guide1.html">Guidelines</a>
+    <a href="resultmentee.html">Results</a>
+    <a href="mentor.html"> Logout</a>
+  </div>
+  
+</body>
+
+</html>
